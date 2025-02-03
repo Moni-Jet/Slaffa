@@ -1,0 +1,166 @@
+/*База, красивая база*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/*Всякие контейнеры красивые*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*Левая часть контейнера*/
+.sidebar {
+    flex: 1 1 300px;
+    margin-right: 20px;
+}
+/*Правая часть контейнера*/
+.main-content {
+    flex: 2 1 600px;
+}
+/*Если нужен 1 контейнер*/
+.content {
+    flex: 900px;
+}
+
+/*Карточки без ховер*/
+.card-unhover {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-unhover a {
+    color: #007bff;
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+.card-unhover a:hover {
+    text-decoration: underline; 
+}
+
+/*Карточки с ховер*/
+.card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+    color: #007bff;
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline; 
+}
+
+i {
+    color: #333;
+    margin-right: 10px;
+	
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Для фоточек (работает адекватно только в .card-unhover)*/
+.gallery {
+    text-align: center;
+}
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.thumbnails img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/*Тултипы*/
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
